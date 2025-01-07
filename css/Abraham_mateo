@@ -1,0 +1,13 @@
+    .fakeimg {
+      height: 200px;
+      background: #aaa;
+    }
+    .carousel-inner img {
+      height: 500px;
+      object-fit: cover;
+    }
+    .testimonial {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 20px;
+    }

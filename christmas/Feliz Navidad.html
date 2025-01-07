@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <script src="./assets/js/color-modes.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <title>Feliz navidad y año</title>
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.3/examples/masonry/"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"
+    />
+    <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewbox="0 0 16 16">
+        <path
+          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+        ></path>
+      </symbol>
+      <symbol id="circle-half" viewbox="0 0 16 16">
+        <path
+          d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+        ></path>
+      </symbol>
+      <symbol id="moon-stars-fill" viewbox="0 0 16 16">
+        <path
+          d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+        ></path>
+        <path
+          d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
+        ></path>
+      </symbol>
+      <symbol id="sun-fill" viewbox="0 0 16 16">
+        <path
+          d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+        ></path>
+      </symbol>
+    </svg>
+    <div
+      class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
+    >
+      <button
+        class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        aria-label="Toggle theme (auto)"
+      >
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+          <use href="#circle-half"></use>
+        </svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul
+        class="dropdown-menu dropdown-menu-end shadow"
+        aria-labelledby="bd-theme-text"
+      >
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="light"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50" width="1em" height="1em">
+              <use href="#sun-fill"></use>
+            </svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="dark"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50" width="1em" height="1em">
+              <use href="#moon-stars-fill"></use>
+            </svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center active"
+            data-bs-theme-value="auto"
+            aria-pressed="true"
+          >
+            <svg class="bi me-2 opacity-50" width="1em" height="1em">
+              <use href="#circle-half"></use>
+            </svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <main class="container py-5">
+      <h1>Feliz Navidad y Feliz Año Nuevo</h1>
+      <hr class="my-5" />
+      <div class="row" data-masonry='{"percentPosition": true }'>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <img
+              src="https://img.freepik.com/vector-gratis/letras-feliz-navidad-brillantes-confeti-brillantes-adornos_1262-16808.jpg"
+              alt="imagen1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Feliz Navidad</h5>
+              <p class="card-text">
+                Que la paz y la alegría de estas fiestas te acompañen todo el
+                año.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <img src="https://s.calendarr.com/upload/b8/20/ano-nuevo-f.jpg?class=ogImageSquare" alt="imagen20" />
+            <div class="card-body">
+              <h5 class="card-title">Un Año Nuevo Brillante</h5>
+              <p class="card-text">
+                Deseo que el próximo año esté lleno de bendiciones y momentos
+                felices.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <img src="https://www.infobae.com/resizer/v2/FJHBTIMETJA25PUCBGK7K7CFDQ.jpg?auth=c98e13e525422c9f3a78603676b256d92fa15c5d517a5f7d6214c40aa9112b16&smart=true&width=350&height=233&quality=85" alt="imagen3" /> 
+            <div class="card-body">
+              <h5 class="card-title">La Magia de Regalar</h5>
+              <p class="card-text">
+                El regalo más grande es el tiempo que compartimos con nuestros
+                seres queridos.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <img
+              src="https://live.mrf.io/statics/i/ps/maduradas.com/wp-content/uploads/2022/12/noche-de-paz.jpg?width=1200&enable=upscale"
+              alt="imagen4"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Noche de Paz</h5>
+              <p class="card-text">
+                Que la nieve cubra tus días con calma y serenidad.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <img src="https://m.media-amazon.com/images/I/71OPQx5CO+L._AC_UF894,1000_QL80_.jpg" alt="imagen5" /> 
+            <div class="card-body">
+              <h5 class="card-title">Brilla Como una Estrella</h5>
+              <p class="card-text">
+                Que tu luz interior ilumine el camino hacia un nuevo año lleno
+                de esperanza.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <img src="https://www.firext.es/wp-content/uploads/2021/12/Fuegos-artificiales.jpg" alt="imagen6" /> 
+            <div class="card-body">
+              <h5 class="card-title">Feliz Año Nuevo</h5>
+              <p class="card-text">
+                Que cada explosión de color en el cielo sea un reflejo de tus
+                sueños cumplidos.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <img
+              src="https://ccplazaprovincias.com/wp-content/uploads/2020/12/especial-navidad.jpg"
+              alt="imagen7"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Un Regalo Especial</h5>
+              <p class="card-text">
+                Que tu Navidad esté llena de momentos que se convierten en
+                recuerdos.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+         
+          <div class="card">
+              <img src="https://i.ytimg.com/vi/JSuUvdgz6ps/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCCXqOOyaO3fdI2oNR8BDx96cdEPg" alt="">
+            <div class="card-body">
+              <h5 class="card-title">Canta en Navidad</h5>
+              <p class="card-text">
+                Que el canto de los villancicos te llene de alegría y amor.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <img
+              src="https://i.ytimg.com/vi/V3Wtc7Uz0Rw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC9XvgI8yqOSpWaGR5wxdPyMTbPdg"
+              alt="imagen9"/>
+            <div class="card-body">
+              <h5 class="card-title">Luz de Esperanza</h5>
+              <p class="card-text">
+                Que la luz de la Navidad ilumine tu vida con alegría.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <img src="https://img.freepik.com/fotos-premium/familia-junto-chimenea-navidad_926199-3010209.jpg" alt="imagen10" /> 
+            <div class="card-body">
+              <h5 class="card-title">Juntos en Navidad</h5>
+              <p class="card-text">
+                Que esta Navidad te traiga momentos inolvidables rodeado de
+                amor.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <img src="https://cdn.prod.website-files.com/5f64854a08f25af4fc8763b6/657c2ff2a7427fd809a25f80_supadu%20blog%20image.jpg" alt="imagen11" /> 
+            <div class="card-body">
+              <h5 class="card-title">Ho Ho Ho!</h5>
+              <p class="card-text">
+                Que la alegría de Santa Claus llene tu hogar de risas y buenos
+                momentos.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <img src="https://www.funtastyc.es/blog/wp-content/uploads/2024/11/6_NOV_blog_navidad-810x540.jpg" alt="imagen12"/> 
+            <div class="card-body">
+              <h5 class="card-title">Dulces Navideños</h5>
+              <p class="card-text">
+                Que los dulces momentos de la Navidad te acompañen todo el año.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <img src="https://img.freepik.com/vector-premium/hermoso-fondo-noche-magica-vector_259139-1884.jpg" alt="imagen13" /> Nochebuena
+            <div class="card-body">
+              <h5 class="card-title">Nochebuena mágica</h5>
+              <p class="card-text">
+                Que esta noche especial te llene de paz, amor y bendiciones.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <img src="https://eco-online.es/wp-content/uploads/2023/12/Nieve.jpg" alt="imagen14" />
+            <div class="card-body">
+              <h5 class="card-title">La Magia de la Nieve</h5>
+              <p class="card-text">
+                Que la nieve cubra de alegría cada rincón de tu vida.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <img src="https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2021/12/27/cena-de-navidad.jpeg" alt="imagen15" /> 
+            <div class="card-body">
+              <h5 class="card-title">Cena de Navidad</h5>
+              <p class="card-text">
+                Que tu mesa navideña esté llena de buenos platillos y mejores
+                recuerdos.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card text-center p-3">
+            <figure class="mb-0">
+              <blockquote class="blockquote">
+                <p>"La Navidad no es una fecha, es un sentimiento."</p>
+              </blockquote>
+              <figcaption class="blockquote-footer mb-0 text-body-secondary">
+                Edna Ferber
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card text-center p-3">
+            <figure class="mb-0">
+              <blockquote class="blockquote">
+                <p>
+                  "La Navidad es la época del año en la que todos quieren que su
+                  vida sea como una postal."
+                </p>
+              </blockquote>
+              <figcaption class="blockquote-footer mb-0 text-body-secondary">
+                Shirley Sealy
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card text-center p-3">
+            <figure class="mb-0">
+              <blockquote class="blockquote">
+                <p>
+                  "El verdadero espíritu de la Navidad es dar a los demás sin
+                  esperar nada a cambio."
+                </p>
+              </blockquote>
+              <figcaption class="blockquote-footer mb-0 text-body-secondary">
+                Anónimo
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card text-center p-3">
+            <figure class="mb-0">
+              <blockquote class="blockquote">
+                <p>
+                  "La Navidad es el día que une a todo el mundo en un espíritu
+                  de amor."
+                </p>
+              </blockquote>
+              <figcaption class="blockquote-footer mb-0 text-body-secondary">
+                Hamilton Wright Mabie
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card text-center p-3">
+            <figure class="mb-0">
+              <blockquote class="blockquote">
+                <p>
+                  "La Navidad siempre será como tú decidas hacerla. Es tu
+                  fiesta."
+                </p>
+              </blockquote>
+              <figcaption class="blockquote-footer mb-0 text-body-secondary">
+                A.D. Posey
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <img src="https://i.etsystatic.com/6513715/r/il/209091/4896038363/il_570xN.4896038363_sxob.jpg" alt="imagen16" /> 
+            <div class="card-body">
+              <h5 class="card-title">Suena la Navidad</h5>
+              <p class="card-text">
+                Que el sonido de las campanas anuncie paz y esperanza en tu
+                vida.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdJyfVa67hhe0sIKbwG8gRAk9b5ESb3ZqRiw&s" alt="imgx">
+            <div class="card-body">
+              <h5 class="card-title">Un Paseo Mágico</h5>
+              <p class="card-text">
+                Que tu Navidad sea tan mágica como un paseo en trineo por un
+                cielo estrellado.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <img src="https://thumbs.dreamstime.com/b/milagro-de-navidad-familia-sorprendida-mirando-la-brillante-caja-regalo-abriendo-regalos-juntos-concepto-maravilla-navide%C3%B1a-261837580.jpg" alt="imagen17" /> 
+            <div class="card-body">
+              <h5 class="card-title">Brillando Juntos</h5>
+              <p class="card-text">
+                Que las luces navideñas iluminen tu camino y te traigan mucha
+                felicidad.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <img src="https://img.freepik.com/fotos-premium/regalos-debajo-arbol_192787-168.jpg" alt="imagen18" /> 
+            <div class="card-body">
+              <h5 class="card-title">El Mejor Regalo</h5>
+              <p class="card-text">
+                El mejor regalo de Navidad es el tiempo compartido con los que
+                amas.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <div class="card">
+            <img src="https://www.guiarepsol.com/content/dam/repsol-guia/contenidos-imagenes/viajar/nos-gusta/juan-duyos-disena-la-luces-de-navidad-de-la-calle-goya-madrid/gr-cms-media-featured_images-none-97b44f1b-d3f9-4bc8-87a4-a266f46ea474-lucesnew.jpg" alt="imagen19" /> 
+            <div class="card-body">
+              <h5 class="card-title">Guía de Luz</h5>
+              <p class="card-text">
+                Que la estrella de Navidad te guíe hacia un año lleno de amor y
+                esperanza.
+              </p>
+            </div>
+          </div>
+        </div>
+        <script src="./assets/dist/js/bootstrap.bundle.min.js"></script>
+        <script
+          async
+          src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+          integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
+          crossorigin="anonymous"
+        ></script>
+      </div>
+    </main>
+  </body>
+</html>
